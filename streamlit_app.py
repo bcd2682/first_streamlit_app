@@ -41,8 +41,11 @@ my_cur = my_cnx.cursor()
 #my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_cur.execute("SELECT * From fruit_load_list")
 my_data_row = my_cur.fetchone()
-streamlit.text("The fruit load list contains:")
-streamlit.text(my_data_row)
+#streamlit.text("The fruit load list contains:")
+#streamlit.text(my_data_row)
+streamlit.header("The fruit load list contains:")
+streamlit.dataframe(my_data_row)
+
 #streamlit.text(fruityvice_response.json())
 
 #take the json version of the response and normalized it
